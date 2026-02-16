@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ujooba Cosmetics - The Gold Standard Ritual</title>
+  <link rel="icon" type="image/svg+xml" href="assets/Images/ujooba_logo.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +37,23 @@
           <span class="nav-link">Real Results</span>
           <a href="https://wa.me/918660023218?text=4-in-1%20whitening%20cream!" class="btn btn-primary"
             target="_blank">Order Now</a>
+
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu" style="color: #000000;">
+          <!-- Inline SVG for reliability -->
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
@@ -454,6 +471,27 @@
       Click to Order via WhatsApp
     </a>
   </div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const isActive = navLinks.classList.contains('active');
+
+      const menuIcon = menuBtn.querySelector('.menu-icon');
+      const closeIcon = menuBtn.querySelector('.close-icon');
+
+      if (isActive) {
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      } else {
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 
